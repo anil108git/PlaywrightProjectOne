@@ -1,0 +1,26 @@
+[
+    {
+        "username" : "ak108.mail@gmail.com",
+        "password" : "Qwerty@11",
+        "usertype" : "Valid_User"
+    },
+    {
+        "username" : "testuser1@gmail.com",
+        "password" : "Qwerty@11",
+        "usertype" : "InValid_User"
+    },
+    {
+        "username" : "testuser2@gmail.com",
+        "password" : "Qwerty@11",
+        "usertype" : "InValid_User"
+    }
+] 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

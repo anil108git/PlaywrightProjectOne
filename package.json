@@ -1,0 +1,20 @@
+{
+  "name": "projectframework_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "DevChromeHeaded": "npx playwright test --project=dev --headed",
+    "DevChromeHeadless": "npx playwright test --project=dev",
+    "ProdChromeheaded": "npx playwright test --project=dev --headed",
+    "ProdChromeHeadless": "npx playwright test --project=dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  }
+}
