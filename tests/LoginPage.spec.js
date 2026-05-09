@@ -1,6 +1,6 @@
 
 const { test, expect } = require('@playwright/test');
-const { PO_Manager } = require('../object_repo/po_Manager');
+const { PO_Manager } = require('../object_repo/PO_Manager');
 const testData = require('../test_data/DashboardTestData.json');
 
 test.describe('Login Page Tests', () => {
