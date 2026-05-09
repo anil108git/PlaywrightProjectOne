@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test');
+const { url } = require('node:inspector');
 
 // Get all the links of the menu items of this https://www.wikipedia.org/ and print it in the console and also valid the links:
 test.describe('Group 1', () => {
@@ -40,7 +41,7 @@ test.describe('Group 1', () => {
 
 // How do you handle file uploads?
 test.describe('Group 2', ()=> {
-    test.only('Should be able to upload file', async ({page}) => {
+    test('Should be able to upload file', async ({page}) => {
         page.goto('https://configurator.medocity.com/');
         const username = page.locator('#userName');
         await username.clear();
@@ -74,6 +75,25 @@ test.describe('Group 2', ()=> {
         await saveClinetDetails.scrollIntoViewIfNeeded();
         await saveClinetDetails.click();
 
+    });
+});
+
+test.describe('Group 3', () =>{
+    test.only('Print all links of wiki Menu', async ({page}) => {
+        await page.goto('https://en.wikipedia.org/wiki/Main_Page');
+        const menuButton = page.getByRole('button', {name:'Main menu'});
+        await menuButton.click();
+        const menuItems = page.locator('.vector-main-menu a');
+        let itemName = '';
+        let URL = '';
+        const count = await menuItems.count();
+        console.log('Total Count of the Menu Items: '+count);
+        for(let i = 0; i<count; i++) {
+            itemName = await menuItems.nth(i).textContent();
+            URL = await menuItems.nth(i).getAttribute('href');
+            await expect(URL).toBeTruthy();
+            console.log('Name of the Menu item: '+ itemName + ' URL of the Menu: '+ URL);
+        }
     });
 });
 
