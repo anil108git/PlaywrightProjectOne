@@ -23,6 +23,18 @@ function findLargest(arr) {
 }
 console.log(findLargest([3, 5, 7, 2, 8])); // Output: 8
 console.log(findLargest([])); // Output: null
+
+
+// Merge two sorted arrays into one sorted array
+function margearray() {
+  const arr1 = [1, 3, 5];
+  const arr2 = [2, 4, 6];
+  // Merges and sorts numerically
+  const merged = [...arr1, ...arr2].sort((a, b) => a - b);
+  console.log(merged);
+}
+margearray()
+
 // Generate Fibonacci sequence up to a certain number
 
 

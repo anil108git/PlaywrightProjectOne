@@ -2,3 +2,20 @@ npx playwright test --project=dev
 npx playwright test --project=staging
 npx playwright test --project=production
 npx playwright test --project=chromium
+
+
+String operation            -- Done
+Numaric operation           -- Inprogress   20% Completed
+Playwright basics           -- Done
+Playwright Advance          -- Inprogress   70% Completed
+Playwright API Testing      -- Inprogress   30% Completed
+Playwright Cucumber         -- Inprogress   70% Completed
+JSON file + operation       -- Inprogress   70% Completed
+Allure Report               -- Pending      
+Playwright Agent + MCP      -- Done
+Playwright Agent + CLI      -- Done
+Playwright.config           -- Done         80% Completed
+Github                      -- Done
+CICD        
+    Github Workflow.yml     -- Done
+    Jenkins                 -- Done

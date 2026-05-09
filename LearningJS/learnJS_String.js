@@ -63,17 +63,6 @@ function longestword(srt) {
 longestword('Check if a string contains only unique characters')
 
 
-// Merge two sorted arrays into one sorted array
-function margearray() {
-  const arr1 = [1, 3, 5];
-  const arr2 = [2, 4, 6];
-  // Merges and sorts numerically
-  const merged = [...arr1, ...arr2].sort((a, b) => a - b);
-  console.log(merged);
-}
-margearray()
-
-
 // Remove all whitespace from a string
 function removeWhiteSpace() {
   let str = 'fd t t e f ye q d he';
