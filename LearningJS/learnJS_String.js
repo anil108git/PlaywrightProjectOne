@@ -127,7 +127,7 @@ function validPalindromeMethod2() {
   let str = 'A man, a plan, a canal: Panama';
   const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
   const reveredStr = cleanedStr.split('').reverse().join('');
-  console.log(cleanedStr===reveredStr ? "Valid palindrome" : "Invalid palindrome")
+  console.log(cleanedStr === reveredStr ? "Valid palindrome" : "Invalid palindrome")
 }
 validPalindromeMethod2()
 
@@ -145,13 +145,13 @@ isValidURL('https://www.google.com');
 
 // Generate a random password of a given length
 function generatePassword(length = 12) {
-    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}|;:,.<>?";
-    let password = "";
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * charset.length);
-        password += charset[randomIndex];
-    }
-    return password;
+  const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}|;:,.<>?";
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charset.length);
+    password += charset[randomIndex];
+  }
+  return password;
 }
 
 console.log(generatePassword(16)); // Generates a 16-character password
@@ -161,19 +161,19 @@ console.log(generatePassword(16)); // Generates a 16-character password
 function numberOfoccurrences(str) {
   let maxCount = 0;
   let maxChar = '';
-  for(let i = 0; i<str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     let count = 0;
-    for(let j=0; j<str.length; j++) {
-      if(str[i]===str[j]) {
+    for (let j = 0; j < str.length; j++) {
+      if (str[i] === str[j]) {
         count++;
       }
     }
-    if(count > maxCount) {
+    if (count > maxCount) {
       maxCount = count;
       maxChar = str[i];
     }
   }
-  console.log('Count and char of the given string: '+ maxCount+ ' : '+maxChar);
+  console.log('Count and char of the given string: ' + maxCount + ' : ' + maxChar);
 }
 numberOfoccurrences('numberOfoccurrences');
 
@@ -188,8 +188,26 @@ function isValidJSON(str) {
 }
 isValidJSON('{"name":"Anil","age":30}');
 
-// Find the longest palindromic substring in a string
 // Find the longest substring without repeating characters
+function largestSubString() {
+  const str = 'characters';
+  let result = '';
+  let current = '';
+  for (const char of str) {
+    if (current.includes(char)) {
+      current = current.slice(current.indexOf(char) + 1);
+    }
+    current += char;
+    if (current.length > result.length) {
+      result = current;
+    }
+  }
+  console.log('Longest substring:', result);
+  console.log('Length:', result.length);
+}
+largestSubString()
+
+
 // Find the longest word in a sentence
 
 // Check if a string is a valid password (at least 8 characters, including uppercase, lowercase, and a number)
