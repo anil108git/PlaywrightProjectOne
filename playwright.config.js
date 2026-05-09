@@ -31,24 +31,24 @@ export default defineConfig({
         
       }
     },
-    {
-      name: 'staging',
-      use: { 
-        ...devices['Desktop Chrome'],
-        baseURL: 'https://staging.example.com' 
-      }
-    },
-    {
-      name: 'production',
-      use: { 
-        ...devices['Desktop Chrome'],
-        baseURL: 'https://example.com' 
-      }
-    },
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
+    // {
+    //   name: 'staging',
+    //   use: { 
+    //     ...devices['Desktop Chrome'],
+    //     baseURL: 'https://staging.example.com' 
+    //   }
+    // },
+    // {
+    //   name: 'production',
+    //   use: { 
+    //     ...devices['Desktop Chrome'],
+    //     baseURL: 'https://example.com' 
+    //   }
+    // },
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
   ],
 
   /* Run your local dev server before starting the tests */
