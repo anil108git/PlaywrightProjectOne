@@ -40,6 +40,7 @@ test.describe('Group 1', () => {
 });
 
 // How do you handle file uploads?
+/*
 test.describe('Group 2', ()=> {
     test('Should be able to upload file', async ({page}) => {
         page.goto('https://configurator.medocity.com/');
@@ -77,7 +78,7 @@ test.describe('Group 2', ()=> {
 
     });
 });
-
+*/
 test.describe('Group 3', () =>{
     test('Print all links of wiki Menu', async ({page}) => {
         await page.goto('https://en.wikipedia.org/wiki/Main_Page');

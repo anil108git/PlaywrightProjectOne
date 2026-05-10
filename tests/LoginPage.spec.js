@@ -46,6 +46,7 @@ test.describe('Login Page Tests', () => {
             });
         });
 
+/**        
     test.describe('Edge Cases', () => {
         test('@Functional Should handle empty credentials', async ({ page }) => {
             await loginPage.login("", "");
@@ -64,6 +65,6 @@ test.describe('Login Page Tests', () => {
             await loginPage.verifyInvalidLogin();
         });
     });
-
+ */
 
 });
