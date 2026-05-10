@@ -1,11 +1,16 @@
-require('dotenv').config();
-import { defineConfig, devices } from '@playwright/test';
+const path = require('path');
+const dotenv = require('dotenv');
+const { defineConfig, devices } = require('@playwright/test');
+
+const envName = process.env.ENV ? `.env.${process.env.ENV}` : '.env';
+const envPath = path.resolve(__dirname, envName);
+dotenv.config({ path: envPath });
 
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
 
-export default defineConfig({
+module.exports = defineConfig({
   testDir: './tests',
   workers: 1,
   reporter: 'html',
@@ -22,8 +27,7 @@ export default defineConfig({
       name: 'dev',
       use: {
         ...devices['Desktop Chrome'],
-        baseURL:
-          process.env.BASE_URL,
+        baseURL: process.env.BASE_URL,
       }
     },
     // {

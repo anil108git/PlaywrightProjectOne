@@ -79,7 +79,7 @@ test.describe('Group 2', ()=> {
 });
 
 test.describe('Group 3', () =>{
-    test.only('Print all links of wiki Menu', async ({page}) => {
+    test('Print all links of wiki Menu', async ({page}) => {
         await page.goto('https://en.wikipedia.org/wiki/Main_Page');
         const menuButton = page.getByRole('button', {name:'Main menu'});
         await menuButton.click();

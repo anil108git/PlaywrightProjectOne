@@ -12,7 +12,7 @@ test.describe('Dashboard Page Tests', () => {
         cartPage = poManager.getCartPage();
 
         await page.goto("/client/#/dashboard/dash");
-        await loginPage.login(testData.credentials.email, testData.credentials.password);
+        await loginPage.login(process.env.USERNAME, process.env.PASSWORD);
         await dashboardPage.isDashboardDisplayed();
     });
 
