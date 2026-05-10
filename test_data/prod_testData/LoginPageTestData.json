@@ -1,0 +1,17 @@
+[
+  {
+    "username": "prod.user@example.com",
+    "password": "ProdPass@123",
+    "usertype": "Valid_User"
+  },
+  {
+    "username": "invalid.prod@example.com",
+    "password": "ProdPass@123",
+    "usertype": "InValid_User"
+  },
+  {
+    "username": "prod123@example.com",
+    "password": "ProdPass@123",
+    "usertype": "InValid_User"
+  }
+]

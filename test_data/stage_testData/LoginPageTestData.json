@@ -1,0 +1,17 @@
+[
+  {
+    "username": "stage.user@example.com",
+    "password": "StagePass@123",
+    "usertype": "Valid_User"
+  },
+  {
+    "username": "invalid.stage@example.com",
+    "password": "StagePass@123",
+    "usertype": "InValid_User"
+  },
+  {
+    "username": "stage123@example.com",
+    "password": "StagePass@123",
+    "usertype": "InValid_User"
+  }
+]

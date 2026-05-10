@@ -7,8 +7,8 @@
     { "userName": "ak108.mail@gmail.com", "password": "Qwerty@11" }
   ],
   "inValidLoginData": [
-  { "userName": "xyz@gmail.com", "password": "Qwerty@11" },
-  { "userName": "xyz123@gmail.com", "password": "Qwerty@11" }
+    { "userName": "xyz@gmail.com", "password": "Qwerty@11" },
+    { "userName": "xyz123@gmail.com", "password": "Qwerty@11" }
   ],
   "product": "ZARA COAT 3",
   "countryName": "India",

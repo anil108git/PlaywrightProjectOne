@@ -1,0 +1,22 @@
+{
+  "credentials": {
+    "email": "prod.user@example.com",
+    "password": "ProdPass@123"
+  },
+  "validLoginData": [
+    { "userName": "prod.user@example.com", "password": "ProdPass@123" }
+  ],
+  "inValidLoginData": [
+    { "userName": "invalid.prod@example.com", "password": "ProdPass@123" },
+    { "userName": "prod123@example.com", "password": "ProdPass@123" }
+  ],
+  "product": "ZARA COAT 3",
+  "countryName": "United States",
+  "expectedGreetMsg": "Thankyou for the order",
+  "validSearchTerms": [
+    { "term": "laptop", "expected": "valid" }
+  ],
+  "invalidSearchTerms": [
+    { "term": "notfound", "expected": "invalid" }
+  ]
+}

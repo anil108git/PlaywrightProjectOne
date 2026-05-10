@@ -1,0 +1,22 @@
+{
+  "credentials": {
+    "email": "stage.user@example.com",
+    "password": "StagePass@123"
+  },
+  "validLoginData": [
+    { "userName": "stage.user@example.com", "password": "StagePass@123" }
+  ],
+  "inValidLoginData": [
+    { "userName": "invalid.stage@example.com", "password": "StagePass@123" },
+    { "userName": "stage123@example.com", "password": "StagePass@123" }
+  ],
+  "product": "ADIDAS ORIGINAL",
+  "countryName": "India",
+  "expectedGreetMsg": "Thankyou for the order",
+  "validSearchTerms": [
+    { "term": "shirt", "expected": "valid" }
+  ],
+  "invalidSearchTerms": [
+    { "term": "nonexistentproduct", "expected": "invalid" }
+  ]
+}
