@@ -1,61 +1,45 @@
-// @ts-check
+require('dotenv').config();
 import { defineConfig, devices } from '@playwright/test';
 
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-export default defineConfig({
 
+export default defineConfig({
   testDir: './tests',
   workers: 1,
-  //retries: 1,
-
   reporter: 'html',
   
   use: {
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
-    // video: 'retain-on-failure',
     ignoreHTTPSErrors: true,
     headless: true,
-    
   },
 
-  /* Configure projects for major browsers */
   projects: [
     {
       name: 'dev',
-      use: {         
+      use: {
         ...devices['Desktop Chrome'],
-        baseURL: 'https://rahulshettyacademy.com',
-        
+        baseURL:
+          process.env.BASE_URL,
       }
     },
     // {
     //   name: 'staging',
-    //   use: { 
+    //   use: {
     //     ...devices['Desktop Chrome'],
-    //     baseURL: 'https://staging.example.com' 
+    //     baseURL: process.env.STAGE_URL
     //   }
     // },
+
     // {
     //   name: 'production',
-    //   use: { 
+    //   use: {
     //     ...devices['Desktop Chrome'],
-    //     baseURL: 'https://example.com' 
+    //     baseURL: process.env.PROD_URL
     //   }
     // },
-    // {
-    //   name: 'chromium',
-    //   use: { ...devices['Desktop Chrome'] },
-    // },
   ],
-
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://localhost:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
 });
-
