@@ -48,6 +48,7 @@ test('Handlling child windoes', async ({browser}) => {
     const page = await context.newPage();
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
     const linkblink = page.locator('.blinkingText');
+    
     const [newPage1] = await Promise.all([
         context.waitForEvent('page'),
         linkblink.click(),

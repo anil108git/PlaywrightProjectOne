@@ -19,3 +19,86 @@ Github                      -- Done
 CICD        
     Github Workflow.yml     -- Done
     Jenkins                 -- Done
+-----------------------------------------------------------------------------------------------
+Sample of yml file when dev team push the code CI/CD automatically start automation Test case
+-----------------------------------------------------------------------------------------------
+name: Playwright Automation Execution
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  playwright-test:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Step 1 - Checkout Application Repo (portalApplication)
+      - name: Checkout portalApplication Repo
+        uses: actions/checkout@v4
+        with:
+          repository: company-name/portalApplication
+          ref: dev
+          path: portalApplication
+
+      # Step 2 - Checkout QA Automation Repo (QAportal)
+      - name: Checkout QAportal Repo
+        uses: actions/checkout@v4
+        with:
+          repository: company-name/QAportal
+          ref: main
+          path: QAportal
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 3 - Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Step 4 - Install Application Dependencies
+      - name: Install portalApplication Dependencies
+        working-directory: ./portalApplication
+        run: npm install
+
+      # Step 5 - Start Application
+      - name: Start portalApplication
+        working-directory: ./portalApplication
+        run: |
+          npm run start &
+          sleep 30
+
+      # Step 6 - Install QA Automation Dependencies
+      - name: Install QAportal Dependencies
+        working-directory: ./QAportal
+        run: npm install
+
+      # Step 7 - Install Playwright Browsers
+      - name: Install Playwright Browsers
+        working-directory: ./QAportal
+        run: npx playwright install --with-deps
+
+      # Step 8 - Run Playwright Tests
+      - name: Execute Playwright Automation
+        working-directory: ./QAportal
+        env:
+          BASE_URL: http://localhost:3000
+        run: npx playwright test
+
+      # Step 9 - Upload Playwright Report
+      - name: Upload Playwright Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: QAportal/playwright-report/
+
+      # Step 10 - Upload Test Results
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: QAportal/test-results/
